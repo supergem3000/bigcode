@@ -47,7 +47,7 @@ class Analyser:
             case_type = case_dict[case_id]['type']
             case_weight = -1
             for i in range(0, 5):
-                if case_id in case_cluster[i]:
+                if case_id in case_cluster[i]['cases']:
                     case_weight = weight[i]
                     break
             for group in group_list:
@@ -77,7 +77,7 @@ class Analyser:
                     user[case_type] = []
                 case_weight = -1
                 for i in range(0, 5):
-                    if case_id in case_cluster[i]:
+                    if case_id in case_cluster[i]['cases']:
                         case_weight = weight[i]
                         break
                 a = np.array(case_dict[case_id]['records'])
